@@ -1,4 +1,4 @@
-from storehouse.models import Category
+from mysite.storehouse.models import Category
 
 
 class CategoryManager:

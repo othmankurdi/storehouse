@@ -1,10 +1,6 @@
-from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
-from rest_framework.views import APIView
-from rest_framework.viewsets import ViewSet
-
-from storehouse.managers import CategoryManager, ProductManager
-from storehouse.models import Category
+from mysite.storehouse.managers import CategoryManager, ProductManager
+from mysite.storehouse.models import Category
 
 
 class CategoryView:
