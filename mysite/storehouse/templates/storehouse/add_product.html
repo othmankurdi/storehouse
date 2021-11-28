@@ -1,0 +1,20 @@
+{%extends 'storehouse/base.html'%}
+
+{%block content%}
+<h1 class="header">Add a new Product </h1>
+<form class ="site-form" action="{%url 'storehouse:add_product' %}" method="POST" style="width:50em">{% csrf_token %}
+    <label id="p">Product Name:</label><BR>
+    <input type="text" name="product_name" id="product_name" value="" onkeyup=disable_enable_button(add_product_button,this)><BR>
+
+    <label id="e">Category ID:</label>
+    <select name="category" id="category">
+        {% for category in categories_list %}
+        <option value="{{ category.id }}">{{ category.name }}</option>
+        {% endfor %}
+    </select>
+
+    <BR><input id="add_product_button" type="submit" value="Create Now" disabled="true">
+    <input hidden id="pagename" name="pagename" type="text" value="{{ pagename }}">
+
+</form>
+{%endblock%}

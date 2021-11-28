@@ -1,0 +1,10 @@
+{%extends 'storehouse/base.html'%}
+
+{%block content%}
+<h1 class="header">Add a new category</h1>
+<form class ="site-form" action="{%url 'storehouse:add_category' %}" method="POST" style="width:50em">{% csrf_token %}
+    <label id="p">New Category Name:</label><BR>
+    <input type="text" name="category_name" id="category_name" value="" onkeyup=disable_enable_button(add_category_button,this)><BR>
+    <BR><input id="add_category_button" type="submit" value="Create Now" disabled="true">
+</form>
+{%endblock%}

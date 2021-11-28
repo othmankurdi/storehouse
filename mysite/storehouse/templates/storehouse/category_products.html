@@ -1,0 +1,35 @@
+{%extends 'storehouse/productsbase.html'%}
+
+{%block productslistcontent%}
+<h1 class="header">Category related Products</h1>
+     {% if products_list %}
+         <table class="customers">
+             <thead>
+                 <tr>
+                     <td width="5%"></td>
+                     <td width="1%" hidden>Product id</td>
+                     <td width="23%">Product Name</td>
+                     <td width="23%">Category Name</td>
+                     <td width="20%">Owner Name</td>
+                     <td width="26%">Create Date</td>
+
+                 </tr>
+             </thead>
+             {% for product in products_list %}
+                <tr for="product{{ forloop.counter }}">
+                    <td><label class="radiobuttoncontainer"><input type="radio" name="product_id" onclick=enable_products_buttons() id="product{{ forloop.counter }}" value="{{ product.id }}"><span class="checkpoint"></span></label></td>
+                    <td hidden>{{product.id}}</td>
+                    <td><label for="product{{ forloop.counter }}">{{product.name}}</label></td>
+                    <td><label for="product{{ forloop.counter }}">{{product.category.name}}</label></td>
+                    <td><label for="product{{ forloop.counter }}">{{product.user.full_name}}</label></td>
+                    <td><label for="product{{ forloop.counter }}">{{product.create_date}}</label></td>
+
+                </tr>
+             {% endfor %}
+         </table>
+         <BR>
+     {% endif %}
+     <input hidden id="pagename" name="pagename" type="text" value="category_products">
+     <input hidden id="category_id" name="category_id" type="text" value="{{ category_id }}">
+
+{%endblock%}

@@ -1,0 +1,27 @@
+{%extends 'storehouse/category_base.html'%}
+
+{%block categoriescontent%}
+<h1 class="header">Categories List</h1>
+     {% if categories_list %}
+         <table class="customers">
+             <thead>
+                 <tr>
+                     <td width="3%"></td>
+                     <td width="10%" >Category id</td>
+                     <td width="50%">Category Name</td>
+
+                 </tr>
+             </thead>
+             {% for category in categories_list %}
+                <tr for="product{{ forloop.counter }}">
+                    <td><label class="radiobuttoncontainer"><input type="radio" name="category_id" onclick=enable_categories_buttons() id="product{{ forloop.counter }}" value="{{ category.id }}"><span class="checkpoint"></span></label></td>
+                    <td >{{category.id}}</td>
+                    <td><label for="product{{ forloop.counter }}">{{category.name}}</label></td>
+
+                </tr>
+             {% endfor %}
+         </table>
+         <BR>
+     {% endif %}
+
+{%endblock%}

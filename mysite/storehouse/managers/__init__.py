@@ -1,0 +1,2 @@
+from .category_manager import CategoryManager
+from .product_manager import ProductManager

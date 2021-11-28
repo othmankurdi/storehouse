@@ -1,0 +1,29 @@
+{%extends 'storehouse/base.html'%}
+
+{%block content%}
+    <h1 class="header">Edit Product</h1>
+    <form action="{% url 'storehouse:edit_product' %}" method="POST" >{% csrf_token %}
+        <BR>
+        <label id="p">Product New Name:</label><BR>
+        <input type="text" name="product_name" id="edit_product" value="{{product.name}}" onkeyup=disable_enable_button(rename_button,this)><BR><BR>
+
+        <label id="category_change">change Product's category:</label><BR>
+        <select name="category_id" id="category_id">
+            {% for category in categories_list %}
+            <option value="{{ category.id }}" {% if category.id == product.category.id %}selected{% endif %}>{{ category.name }}</option>
+            {% endfor %}
+        </select>
+        <BR><BR><BR>
+        <label id="product_owner">Product Owner:   </label>
+        <label id="product_owner_name">{{ product.user.full_name}}</label><BR><BR>
+        <table>
+             <tr>
+                 <td><input id="rename_button" type="submit" value="Save"></td>
+             </tr>
+        </table>
+        <input hidden id="product_id" name="product_id" type="text" value="{{ product.id }}">
+        <input hidden id="pagename" name="pagename" type="text" value="{{ pagename }}">
+
+    </form>
+
+{%endblock%}

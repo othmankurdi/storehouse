@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{%load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="{% static 'images/list_icon3.png' type='image/x-icon' %}">
+    <title>Store House</title>
+    <link  rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+    <link  rel="script" type="text/javascript" href="{% static 'scripts/main.js' %}"/>
+   <script
+           crossorigin="anonymous"
+           integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+           src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script  type="text/javascript" src="{% static 'scripts/main.js'%}"></script>
+</head>
+<body class="body" >
+    <script src="{% static 'scripts/main.js'%}"></script>
+    <link  rel="script" type="text/javascript" href="{% static 'scripts/main.js' %}"/>
+
+    <div class="topnav">
+      <a class="active" href="{% url 'storehouse:home' %}" methods="GET" title="Show all Products">Home</a>
+      <a href="{% url 'storehouse:products' %}" methods="GET" title="Show Products created by me">My Products</a>
+      <a href="{% url 'storehouse:category' %}" methods="GET" title="Show Categories">Categories</a>
+      <a href="{% url 'storehouse:logout' %}" methods="GET" class="logout_button">logout</a>
+      <a href="{% url 'storehouse:profile' %}" methods="GET" style="float:right" title="View Profile">{{user_name}}</a>
+    </div>
+    <br><br>
+    {% if message %}
+         <div id="info-message" class="info" >
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            <strong>{{message}}</strong>
+         </div><br>
+    {% endif %}
+    {% if warningmessage %}
+         <div id="warning-message" class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            <strong>{{warningmessage}}</strong>
+         </div><br>
+    {% endif %}
+    {% for sessionmessage in messages %}
+         <div id="session-message" class="info">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            <strong>{{sessionmessage}}</strong>
+         </div><br>
+    {% endfor %}
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

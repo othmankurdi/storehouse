@@ -1,0 +1,390 @@
+input[type=text] , input[type=email] , input[type=password] , input[type=phone] {
+  width: 60em;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+input[type=text]:focus , input[type=email]:focus , input[type=password]:focus , input[type=phone]:focus {
+  border: 3px solid #555;
+}
+
+textarea {
+  width: 60em;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+textarea:focus {
+  border: 3px solid #555;
+}
+
+.label{
+  width: 20%;
+  text-align: center;
+  background: #4CAF50
+  font-size: 30px;
+  color:#000000;
+
+}
+
+.header {
+  padding: 20px;
+  width: 80%
+  text-align: center;
+  background: #4CAF50
+  font-size: 60px;
+  color:#000000;
+}
+
+.body {
+    margin:0px 0px;
+    padding:30px;
+    text-align:left;
+    align:center;
+    background: #f2f2d2;
+}
+
+input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
+    opacity:1;
+    transform: scale(1.1);
+}
+
+input[type=button]:disabled , input[type=submit]:disabled, input[type=reset]:disabled {
+    opacity:0.5;
+}
+
+input[type=button]:disabled:hover , input[type=submit]:disabled:hover, input[type=reset]:disabled:hover {
+    opacity:0.5;
+    transform: scale(0.9);
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  opacity: 0.85;
+  transition:0.3s;
+  box-shadow: 2px 2px #888888;
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Tables Styling: */
+.customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 170em !important;
+  align: center;
+  box-shadow: 2px 2px #888888;
+  border-radius: 8px !important;
+  -moz-border-radius: 8px !important;
+}
+
+.customers td{
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.customers tr:nth-child(even){
+    background-color: #E0F8E0;
+    opacity=0.7;
+}
+
+.customers tr:hover {
+    background-color: #ddd;
+    transform: scale(1.0125);
+    border-radius: 8px !important;
+    -moz-border-radius: 8px !important;
+}
+
+.customers thead:hover {
+    transform: scale(1);
+    background-color:#4CAF50;
+    border-radius: 8px !important;
+    -moz-border-radius: 8px !important;
+}
+
+.customers thead {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* Styling of alert messages and info messages */
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+}
+
+.info {
+  padding: 20px;
+  background-color: #4CAF50;
+  color: white;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* Styling for checkboxes: */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-top=15px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #4CAF50;
+  opacity=0.5;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* Styling radio buttons:*/
+
+.radiobuttoncontainer {
+  display: block;
+  position: relative;
+  padding-left: 0px;
+  margin-top=15px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #f2f2f2;
+  border-color: black;
+}
+
+/* Hide the browser's default radio button */
+.radiobuttoncontainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkpoint {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #4CAF50;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.radiobuttoncontainer:hover input ~ .checkpoint {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.radiobuttoncontainer input:checked ~ .checkpoint {
+  background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkpoint:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radiobuttoncontainer input:checked ~ .checkpoint:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radiobuttoncontainer .checkpoint:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+
+.logout_button{
+    float:right !important;
+}
+.logout_button:hover{
+    background:red !important;
+}
+
+
+/*the container must be positioned relative:*/
+.custom-select {
+  position: relative;
+  font-family: Arial;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+}
+
+.select-selected {
+  background-color: DodgerBlue;
+}
+
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+}
+
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color: DodgerBlue;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}

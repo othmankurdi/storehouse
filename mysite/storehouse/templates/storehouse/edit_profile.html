@@ -1,0 +1,45 @@
+{%extends 'storehouse/base.html'%}
+
+{%block content%}
+<h1 class="header">Profile</h1>
+ <form action="{% url 'storehouse:edit_profile' %}" method="POST">{% csrf_token %}
+     <table width="100%">
+         <tr>
+             <td><lable class="">Full Name:</lable></td>
+             <td><input type="text" name="full_name" value="{{userinfo.full_name}}"></input></td>
+         </tr>
+         <tr>
+             <td><lable class="">E-mail:</lable></td>
+             <td><input id="email_profile_input" type="text" name="email" value="{{userinfo.email}}" onkeyup=disable_enable_button(save_profile_button,this)></input></td>
+         </tr>
+         <tr>
+             <td><lable class="">Age:</lable></td>
+             <td><input type="text" name="age" value="{{userinfo.age}}"></input></td>
+         </tr>
+         <tr>
+             <td><lable class="">Phone:</lable></td>
+             <td><input type="text" name="phone" value="{{userinfo.phone}}" ></input></td>
+         </tr>
+         <tr>
+             <td><lable class="">Bio:</lable></td>
+             <td><input height="30px" type="text" name="bio" value="{{userinfo.bio}}"></input></td>
+         </tr>
+         <tr>
+             <td><lable class="">User Name:</lable></td>
+             <td><input type="text" name="username" value="{{authuserinfo.username}}" readonly></input></td>
+         </tr>
+         <tr>
+             <td><lable class="">Password:</lable></td>
+             <td><input type="text" name="password" value="{{authuserinfo.password}}"></input></td>
+         </tr>
+     </table>
+     <input hidden name="list_id" value={{list_id}}>
+     <table width="50%">
+         <tr>
+             <td><input id="save_profile_button" type="submit" value="Save" formaction="{% url 'storehouse:edit_profile' %}" ></td>
+             <td></td>
+             <td><input type="submit" value="Cancel" formaction="{% url 'storehouse:profile' %}" formmethod="GET"></td>
+         </tr>
+     </table>
+  </form>
+{%endblock%}
