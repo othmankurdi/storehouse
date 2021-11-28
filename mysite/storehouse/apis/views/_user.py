@@ -1,13 +1,9 @@
 from datetime import datetime
-
-from django.shortcuts import render
-from rest_framework.views import APIView
-from rest_framework.viewsets import ViewSet
-from storehouse.forms import SignupForm
-from storehouse.models import User
+from mysite.storehouse.forms import SignupForm
+from mysite.storehouse.models import User
 from django.contrib import messages
 from django.contrib.auth import logout, authenticate, login
-from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
+from django.http import HttpResponseRedirect
 from django.contrib.auth.forms import AuthenticationForm
 from django.shortcuts import render, redirect
 

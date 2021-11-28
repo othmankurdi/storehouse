@@ -21,6 +21,3 @@ class ProductAdmin(admin.ModelAdmin):
 
     def user_full_name(self, obj):
         return obj.user.full_name
-
-
-#this is a git test

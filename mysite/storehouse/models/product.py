@@ -1,5 +1,5 @@
 from django.db import models
-from storehouse.models import Category, User
+from mysite.storehouse.models import Category, User
 
 
 class Product(models.Model):
