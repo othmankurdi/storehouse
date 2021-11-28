@@ -1,6 +1,6 @@
 from datetime import datetime
 from django.shortcuts import render
-from storehouse.models import Product, User, Category
+from mysite.storehouse.models import Product, User, Category
 
 
 class ProductManager:
